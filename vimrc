@@ -6,6 +6,7 @@ call pathogen#runtime_append_all_bundles()
 " Set the encoding
 set encoding=utf-8
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
@@ -24,6 +25,7 @@ set backspace=indent,eol,start
 set showmatch
 set showcmd
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Wrapping setup
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -40,6 +42,7 @@ set laststatus=2
 " Tab Completion
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,vendor/*,doc/*,tmp/*,log/*
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search
@@ -71,13 +74,6 @@ let mapleader=","
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Powerline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:Powerline_symbols = 'fancy'
-
-" set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Relative Numbers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 set relativenumber
@@ -86,6 +82,7 @@ set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " White Space
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,13 +90,6 @@ autocmd InsertLeave * :set relativenumber
 set listchars=tab:>-,trail:-
 set list
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ween myself off the arrow keys
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Up> <nop>
-map <Down> <nop>
-map <Left> <nop>
-map <Right> <nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Easier Navigation with vim windows
@@ -136,6 +126,7 @@ colorscheme zenburn
 
 set guifont=Iconsolata:h18
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File indentation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -152,6 +143,7 @@ command! FR set filetype=ruby
 
 " I get bit by this all the time
 command! W :w
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Add files for highlighting
@@ -173,6 +165,7 @@ set pastetoggle=<C-r>+
 
 let coffee_compiler = '/usr/local/bin/coffee'
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rename the current file
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -187,11 +180,7 @@ function! RenameFile()
 endfunction
 map <Leader>n :call RenameFile()<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Command-T (removed)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" map <leader>f :CommandT<cr>
-" map <leader>F :CommandTBuffer<cr>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remappings
@@ -199,6 +188,7 @@ map <Leader>n :call RenameFile()<cr>
 " Visually highlight text and use leader G to copy and private gist it
 " thanks Steve Losh
 vnoremap <leader>G :w !gist -p -t %:e \| pbcopy<cr>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " git blame
@@ -218,6 +208,7 @@ nnoremap <Leader>c :w\|!bundle exec cucumber %<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 :nnoremap <CR> :nohlsearch<cr>
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Resize window
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -225,37 +216,6 @@ map <Up> <C-W>+
 map <Down> <C-W>-
 map <Left> <c-w><
 map <Right> <c-w>>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TMUX Handling
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if exists('$TMUX')
-  function! TmuxOrSplitSwitch(wincmd, tmuxdir)
-    let previous_winnr = winnr()
-    silent! execute "wincmd " . a:wincmd
-    if previous_winnr == winnr()
-      call system("tmux select-pane -" . a:tmuxdir)
-      redraw!
-    endif
-  endfunction
-
-  let previous_title = substitute(system("tmux display-message -p '#{pane_title}'"), '\n', '', '')
-  let &t_ti = "\<Esc>]2;vim\<Esc>\\" . &t_ti
-  let &t_te = "\<Esc>]2;". previous_title . "\<Esc>\\" . &t_te
-
-  nnoremap <silent> <C-h> :call TmuxOrSplitSwitch('h', 'L')<cr>
-  nnoremap <silent> <C-j> :call TmuxOrSplitSwitch('j', 'D')<cr>
-  nnoremap <silent> <C-k> :call TmuxOrSplitSwitch('k', 'U')<cr>
-  nnoremap <silent> <C-l> :call TmuxOrSplitSwitch('l', 'R')<cr>
-else
-  map <C-h> <C-w>h
-  map <C-j> <C-w>j
-  map <C-k> <C-w>k
-  map <C-l> <C-w>l
-endif
-
-" Indent - >
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
