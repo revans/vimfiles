@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Volumes/jackle/Work/TaylorMade/staffsite-old/app/value_objects'
+let g:netrw_dirhist_2='/Volumes/jackle/Work/TaylorMade/staffsite-old/app'
+let g:netrw_dirhist_3='/Volumes/jackle/Work/TaylorMade/staffsite-old/app/services'
+let g:netrw_dirhist_4='/Volumes/jackle/Work/TaylorMade/staffsite-old/app'
+let g:netrw_dirhist_5='/Volumes/jackle/Work/TaylorMade/staffsite-old/app/models'
+let g:netrw_dirhist_6='/Users/robert/Desktop/mailchimp_export_cleaner/test'
+let g:netrw_dirhist_7='/Volumes/jackle/Playground/get_the_rundown/db/migrate'
+let g:netrw_dirhist_8='/Volumes/jackle/Playground/get_the_rundown/app/models'
+let g:netrw_dirhist_9='/Volumes/jackle/Playground/get_the_rundown/db/migrate'
