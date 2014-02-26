@@ -1,0 +1,16 @@
+# VimFiles
+
+Just a collection of things for Vim.
+
+## Setup
+
+An example of how you can set this up:
+
+````
+git clone https://github.com/revans/vimfiles.git $HOME/dotfiles
+
+ln -s $HOME/dotfiles/vimrc $HOME/.vimrc
+ln -s $HOME/dotfiles/vim $HOME/.vim
+````
+
+Now you have a quick & dirty vim setup that is somewhat pleasing to use.
